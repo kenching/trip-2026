@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<title>沖繩釣魚團 2026 · 7月28–31日</title>
-<meta name="description" content="沖繩9人自駕釣魚團，2026年7月28–31日。香港航空 HX676／HX679，入住 Novotel Okinawa Naha，泊港出海釣魚，國際通美食。">
+<title>沖繩釣魚團 2026 · 福岡・九州 2026</title>
+<meta name="description" content="兩個行程共一頁：沖繩釣魚團 2026（7月28–31日，泊港出海釣魚、Novotel Okinawa Naha）與福岡・九州 2026（8月9–15日，自駕別府地獄、由布院溫泉旅館、糸島、太宰府）。">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="沖繩釣魚團 2026">
-<meta property="og:title" content="沖繩釣魚團 2026 · 7月28–31日">
-<meta property="og:description" content="9人自駕．泊港出海釣魚（7/29–30）．香港航空 HX676／HX679．Novotel Okinawa Naha．國際通美食推介。">
+<meta property="og:site_name" content="沖繩釣魚團 2026 · 福岡・九州 2026">
+<meta property="og:title" content="沖繩釣魚團 2026 · 福岡・九州 2026">
+<meta property="og:description" content="兩個行程：7月28–31日 沖繩釣魚團（自駕．泊港出海釣魚．Novotel Okinawa Naha），8月9–15日 福岡・九州（自駕．別府地獄．由布院溫泉旅館．糸島．太宰府）。">
 <meta property="og:url" content="https://kenching.github.io/okinawa-fishing-2026/">
 <meta property="og:image" content="https://kenching.github.io/okinawa-fishing-2026/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="zh_HK">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="沖繩釣魚團 2026 · 7月28–31日">
-<meta name="twitter:description" content="9人自駕．泊港出海釣魚．香港航空 HX676／HX679．Novotel Okinawa Naha．國際通美食。">
+<meta name="twitter:title" content="沖繩釣魚團 2026 · 福岡・九州 2026">
+<meta name="twitter:description" content="7月28–31日 沖繩釣魚團（自駕．出海釣魚）與 8月9–15日 福岡・九州（別府地獄．由布院溫泉．糸島．太宰府）。">
 <meta name="twitter:image" content="https://kenching.github.io/okinawa-fishing-2026/og-image.png">
 <style>
   :root {
@@ -44,6 +44,10 @@
     --hero-sun: rgba(199, 74, 36, 0.5);
     --chip-bg: #dfeeef;
     --chip-ink: #084b54;
+    --fk-1: #2c2350;
+    --fk-2: #6a3467;
+    --fk-3: #a8474a;
+    --fk-sun: rgba(255, 186, 120, 0.45);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -439,6 +443,69 @@
   }
   .r-opt .ro-total b { color: var(--ink); font-weight: 800; }
 
+  /* ---------- Trip switcher (CSS-only tabs, no JS) ---------- */
+  .trip-radio {
+    position: absolute; width: 1px; height: 1px;
+    margin: 0; padding: 0; border: 0;
+    clip: rect(0 0 0 0); clip-path: inset(50%); overflow: hidden;
+  }
+  .tripbar {
+    background: var(--surface-2);
+    border-bottom: 2px solid var(--border);
+  }
+  .tripbar .row {
+    max-width: var(--maxw); margin: 0 auto;
+    padding: 12px 14px;
+    display: grid; grid-template-columns: 1fr; gap: 10px;
+  }
+  @media (min-width: 560px) { .tripbar .row { grid-template-columns: 1fr 1fr; } }
+  .tripbtn {
+    display: flex; flex-direction: column; justify-content: center; gap: 2px;
+    min-height: 64px;
+    padding: 10px 16px;
+    border-radius: 14px;
+    border: 2px solid var(--border);
+    background: var(--surface);
+    color: var(--ink);
+    font-weight: 800; font-size: 1.02rem; line-height: 1.35;
+    text-align: center;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .tripbtn small {
+    display: block; font-size: 0.9rem; font-weight: 700;
+    color: var(--ink-label); line-height: 1.4;
+  }
+  .tripbtn:hover { border-color: var(--teal); background: var(--chip-bg); }
+  #trip-fk:checked ~ .tripbar label[for="trip-fk"],
+  #trip-ok:checked ~ .tripbar label[for="trip-ok"] {
+    background: var(--teal); border-color: var(--teal-strong); color: #fff;
+  }
+  #trip-fk:checked ~ .tripbar label[for="trip-fk"] small,
+  #trip-ok:checked ~ .tripbar label[for="trip-ok"] small { color: #fff; }
+  #trip-fk:focus-visible ~ .tripbar label[for="trip-fk"],
+  #trip-ok:focus-visible ~ .tripbar label[for="trip-ok"] {
+    outline: 4px solid var(--lagoon); outline-offset: 3px;
+  }
+  .trip-panel { display: none; }
+  #trip-fk:checked ~ #panel-fk,
+  #trip-ok:checked ~ #panel-ok { display: block; }
+
+  /* Fukuoka hero palette */
+  .hero.fk {
+    background:
+      radial-gradient(120% 90% at 82% -10%, var(--fk-sun) 0%, rgba(255,186,120,0) 42%),
+      linear-gradient(165deg, var(--fk-1) 0%, var(--fk-2) 52%, var(--fk-3) 100%);
+  }
+
+  /* Address / map card helpers (reuse card system) */
+  .addr {
+    margin: 0; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.75;
+    overflow-wrap: anywhere;
+  }
+  .addr b { color: var(--ink); font-weight: 800; }
+
   a { color: var(--teal); }
   :focus-visible { outline: 4px solid var(--lagoon); outline-offset: 3px; border-radius: 8px; }
 
@@ -455,6 +522,323 @@
 </style>
 </head>
 <body>
+
+<div class="triptabs">
+
+<input class="trip-radio" type="radio" name="trip" id="trip-fk" checked>
+<input class="trip-radio" type="radio" name="trip" id="trip-ok">
+
+<div class="tripbar">
+  <div class="row">
+    <label class="tripbtn" for="trip-fk">♨️ 福岡・九州 2026<small>8月9–15日 · 7日6夜</small></label>
+    <label class="tripbtn" for="trip-ok">🎣 沖繩釣魚團 2026<small>7月28–31日 · 4日3夜</small></label>
+  </div>
+</div>
+
+<!-- ===================== 福岡・九州 2026 ===================== -->
+<div class="trip-panel" id="panel-fk">
+
+<header class="hero fk">
+  <div class="hero-inner">
+    <span class="eyebrow">Fukuoka · 九州</span>
+    <h1>♨️ 福岡・九州 2026</h1>
+    <p class="meta">
+      <span>8月9–15日</span><span class="dot">·</span><span>7日6夜</span><span class="dot">·</span><span>自駕</span>
+    </p>
+    <p class="summary">自駕由別府起行，遊覽別府地獄，入住由布院溫泉旅館一泊二食，再以福岡為據點前往糸島與太宰府 ♨️🚗</p>
+  </div>
+  <svg class="waves" viewBox="0 0 1440 46" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 24 C 180 4, 300 44, 480 30 C 660 16, 780 46, 960 32 C 1140 18, 1260 44, 1440 26 L1440 46 L0 46 Z" fill="var(--ground)"/>
+  </svg>
+</header>
+
+<nav class="tabs" aria-label="福岡行程章節導覽">
+  <div class="row">
+    <a href="#fk-info">快速資訊</a>
+    <a href="#fk-flights">機票</a>
+    <a href="#fk-days">逐日行程</a>
+    <a href="#fk-stay">住宿</a>
+    <a href="#fk-tips">貼士</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- Quick facts -->
+  <section id="fk-info">
+    <div class="sec-head"><span class="ico">📋</span><h2>快速資訊</h2></div>
+    <div class="facts">
+      <div class="fact"><span class="k">日期</span><span class="v">2026/8/9–8/15<small>7日6夜（日至六）</small></span></div>
+      <div class="fact"><span class="k">航空</span><span class="v">HK Express<small>香港往返福岡</small></span></div>
+      <div class="fact"><span class="k">交通</span><span class="v">自駕租車<small>福岡機場取車，最後一日還車</small></span></div>
+      <div class="fact"><span class="k">路線</span><span class="v">別府 → 由布院 → 福岡<small>別府（2晚）→ 由布院（1晚）→ 福岡（3晚）</small></span></div>
+    </div>
+  </section>
+
+  <!-- Flights -->
+  <section id="fk-flights">
+    <div class="sec-head"><span class="ico">✈️</span><h2>機票</h2></div>
+    <p class="lead">乘搭 <b>HK Express</b> 香港往返福岡。以下只列出已確認之<b>起飛時間</b>；時間均以當地機場時間為準（日本比香港快 1 小時）。</p>
+    <div class="cards" style="margin-top:22px;">
+
+      <div class="card wide feat">
+        <div class="tags"><span class="tag coral">✈️ 去程</span></div>
+        <div class="ct">🛫 去程 · 8/9（日）</div>
+        <div class="cs">香港 HKG → 福岡 FUK</div>
+        <div class="flights-list">
+          <div class="flight-row">
+            <span class="fl-time">10:55 香港 HKG 起飛 → 福岡 FUK</span>
+            <div class="fl-air">HK Express（香港快運）</div>
+            <span class="fl-note">10:55 為香港時間起飛。抵達時間待確認。</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card wide feat">
+        <div class="tags"><span class="tag coral">✈️ 回程</span></div>
+        <div class="ct">🛬 回程 · 8/15（六）</div>
+        <div class="cs">福岡 FUK → 香港 HKG</div>
+        <div class="flights-list">
+          <div class="flight-row">
+            <span class="fl-time">16:15 福岡 FUK 起飛 → 香港 HKG</span>
+            <div class="fl-air">HK Express（香港快運）</div>
+            <span class="fl-note">16:15 為日本時間起飛。抵達時間待確認。</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note" style="margin-top:18px;">
+      <span class="ni">ℹ️</span>
+      <span>航班號、抵達時間及行李額請以 HK Express 訂位確認及航空公司網站為準。</span>
+    </div>
+
+    <div class="note" style="margin-top:18px;">
+      <span class="ni">⏰</span>
+      <span>建議起飛前約 2–3 小時到達機場辦理登機手續。</span>
+    </div>
+  </section>
+
+  <!-- Day by day -->
+  <section id="fk-days">
+    <div class="sec-head"><span class="ico">🗓️</span><h2>逐日行程</h2></div>
+    <div class="timeline">
+
+      <article class="day">
+        <div class="day-head">
+          <div class="day-num">1</div>
+          <div>
+            <div class="dh-t">8/9（日）· 別府</div>
+            <div class="dh-s">抵達福岡 → 取車 → 駕車前往別府</div>
+          </div>
+        </div>
+        <ul class="steps">
+          <li><span class="t">抵達</span><span class="d">抵達 <b>福岡機場</b>，辦理入境手續</span></li>
+          <li><span class="t">取車</span><span class="d">於機場租車櫃位 <b>取車</b>，檢查車輛及設定導航</span></li>
+          <li><span class="t">駕車</span><span class="d">駕車前往 <b>別府</b></span></li>
+          <li><span class="t">入住</span><span class="d">別府住宿辦理 <b>check-in</b></span></li>
+          <li><span class="t">晚上</span><span class="d">休息／泡湯，調整時差與車程疲勞 ♨️</span></li>
+          <li><span class="t">住宿</span><span class="d"><b>別府</b></span></li>
+        </ul>
+      </article>
+
+      <article class="day">
+        <div class="day-head">
+          <div class="day-num">2</div>
+          <div>
+            <div class="dh-t">8/10（一）· 別府</div>
+            <div class="dh-s">九州自然動物公園 → 明礬溫泉 → 別府地獄精選</div>
+          </div>
+        </div>
+        <ul class="steps">
+          <li><span class="t">上午</span><span class="d"><b>African Safari（九州自然動物公園）</b>，可乘園內叢林巴士觀賞動物 🦁</span></li>
+          <li><span class="t">午間</span><span class="d"><b>岡本屋</b>（明礬溫泉），品嚐 <b>地獄蒸布丁</b> 及地獄蒸料理 🍮</span></li>
+          <li><span class="t">下午</span><span class="d"><b>別府地獄精選</b>：可揀重點幾個地獄遊覽，不必全部走完</span></li>
+          <li><span class="t">傍晚</span><span class="d">回酒店休息 ♨️</span></li>
+          <li><span class="t">住宿</span><span class="d"><b>別府</b></span></li>
+        </ul>
+      </article>
+
+      <article class="day">
+        <div class="day-head">
+          <div class="day-num">3</div>
+          <div>
+            <div class="dh-t">8/11（二）· 由布院</div>
+            <div class="dh-s">別府出發 → 由布院慢遊 → 溫泉旅館一泊二食</div>
+          </div>
+          <span class="badge-sea">♨️ 溫泉旅館</span>
+        </div>
+        <ul class="steps">
+          <li><span class="t">上午</span><span class="d">別府出發前往由布院</span></li>
+          <li><span class="t">可選</span><span class="d"><b>鶴見岳</b>（乘纜車登山賞景）<b>【可選】</b> 🚡</span></li>
+          <li><span class="t">下午</span><span class="d"><b>由布院慢遊</b>：湯之坪街道、金鱗湖</span></li>
+          <li><span class="t">傍晚</span><span class="d">入住溫泉旅館，<b>一泊二食</b>（晚餐及翌日早餐）</span></li>
+          <li><span class="t">住宿</span><span class="d"><b>由布院 月燈庵</b></span></li>
+        </ul>
+      </article>
+
+      <article class="day">
+        <div class="day-head">
+          <div class="day-num">4</div>
+          <div>
+            <div class="dh-t">8/12（三）· 福岡</div>
+            <div class="dh-s">旅館早餐 → 九重「夢」大吊橋（可選）→ 駕車往福岡</div>
+          </div>
+        </div>
+        <ul class="steps">
+          <li><span class="t">早上</span><span class="d">於由布院旅館享用 <b>早餐</b></span></li>
+          <li><span class="t">可選</span><span class="d"><b>九重「夢」大吊橋</b> <b>【可選】</b>，飽覽峽谷及瀑布景色 🌉</span></li>
+          <li><span class="t">下午</span><span class="d">駕車前往 <b>福岡</b></span></li>
+          <li><span class="t">入住</span><span class="d">入住福岡酒店</span></li>
+          <li><span class="t">住宿</span><span class="d"><b>福岡</b></span></li>
+        </ul>
+      </article>
+
+      <article class="day">
+        <div class="day-head">
+          <div class="day-num">5</div>
+          <div>
+            <div class="dh-t">8/13（四）· 福岡</div>
+            <div class="dh-s">糸島自駕一日遊</div>
+          </div>
+        </div>
+        <ul class="steps">
+          <li><span class="t">全日</span><span class="d"><b>糸島自駕一日遊</b>：沿海岸線兜風 🚗</span></li>
+          <li><span class="t">景點</span><span class="d"><b>白絲瀑布</b>、<b>櫻井二見浦</b> 一帶</span></li>
+          <li><span class="t">休息</span><span class="d">沿線咖啡店與打卡點，隨意停留 ☕</span></li>
+          <li><span class="t">住宿</span><span class="d"><b>福岡</b></span></li>
+        </ul>
+      </article>
+
+      <article class="day">
+        <div class="day-head">
+          <div class="day-num">6</div>
+          <div>
+            <div class="dh-t">8/14（五）· 福岡</div>
+            <div class="dh-s">太宰府天滿宮 → Lalaport 福岡／購物</div>
+          </div>
+        </div>
+        <ul class="steps">
+          <li><span class="t">上午</span><span class="d"><b>太宰府天滿宮</b>，並於 <b>表參道</b> 品嚐小食 ⛩️</span></li>
+          <li><span class="t">下午</span><span class="d"><b>Lalaport 福岡</b>／購物 🛍️</span></li>
+          <li><span class="t">住宿</span><span class="d"><b>福岡</b></span></li>
+        </ul>
+      </article>
+
+      <article class="day">
+        <div class="day-head">
+          <div class="day-num">7</div>
+          <div>
+            <div class="dh-t">8/15（六）· 回程</div>
+            <div class="dh-s">最後購物 → 還車 → 福岡機場 → 16:15 起飛返港</div>
+          </div>
+        </div>
+        <ul class="steps">
+          <li><span class="t">上午</span><span class="d">最後購物，收拾行李並辦理退房</span></li>
+          <li><span class="t">還車</span><span class="d">駕車返回租車公司 <b>還車</b>（請預留加油及檢查時間）</span></li>
+          <li><span class="t">機場</span><span class="d">前往 <b>福岡機場</b> 辦理登機手續</span></li>
+          <li><span class="t">16:15</span><span class="d"><b>起飛返回香港</b> ✈️</span></li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Stay -->
+  <section id="fk-stay">
+    <div class="sec-head"><span class="ico">🏨</span><h2>住宿</h2></div>
+    <p class="lead">全程共 <b>3 處住宿</b>：別府 2 晚、由布院溫泉旅館 1 晚、福岡 3 晚。各住宿附地址及地圖連結，方便自駕導航。</p>
+
+    <div class="cards">
+
+      <div class="card wide">
+        <div class="tags"><span class="tag">別府</span><span class="tag">Airbnb</span><span class="tag">2 晚</span></div>
+        <div class="ct">別府住宿（Airbnb）</div>
+        <div class="cs">大分縣別府市 · 8/9–8/11（2 晚）</div>
+        <p class="addr"><b>地址：</b>10-22 Oguracho, Beppu, Oita 874-0842, Japan<br>（大分縣別府市小倉町 10-22）</p>
+        <div class="links">
+          <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=10-22%20Oguracho%2C%20Beppu%2C%20Oita%20874-0842%2C%20Japan" target="_blank" rel="noopener">📍 地圖 →</a>
+        </div>
+      </div>
+
+      <div class="card wide feat">
+        <div class="tags"><span class="tag coral">♨️ 一泊二食</span><span class="tag">由布院</span><span class="tag">1 晚</span></div>
+        <div class="ct">由布院 月燈庵（Gettouan）</div>
+        <div class="cs">大分縣由布市 · 8/11–8/12（1 晚）</div>
+        <p class="addr"><b>地址：</b>〒879-5102 大分縣由布市湯布院町川上 295-2<br>（295-2 Yufuincho Kawakami, Yufu, Oita）</p>
+        <p>溫泉旅館，一泊二食（包晚餐及翌日早餐），請留意用餐時間安排。</p>
+        <div class="links">
+          <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9C%88%E7%87%88%E5%BA%B5%20%E7%94%B1%E5%B8%83%E9%99%A2%20295-2%20Yufuincho%20Kawakami%2C%20Yufu%2C%20Oita" target="_blank" rel="noopener">📍 地圖 →</a>
+        </div>
+      </div>
+
+      <div class="card wide">
+        <div class="tags"><span class="tag">福岡</span><span class="tag">博多站東側</span><span class="tag">3 晚</span></div>
+        <div class="ct">THE BASICS FUKUOKA</div>
+        <div class="cs">福岡市博多區 · 8/12–8/15（3 晚）</div>
+        <p class="addr"><b>地址：</b>〒812-0013 福岡縣福岡市博多區博多駅東 2 丁目 14-1<br>（博多站東側）</p>
+        <div class="links">
+          <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=THE%20BASICS%20FUKUOKA%20%E7%A6%8F%E5%B2%A1%E5%B8%82%E5%8D%9A%E5%A4%9A%E5%8D%80%E5%8D%9A%E5%A4%9A%E9%A7%85%E6%9D%B12%E4%B8%81%E7%9B%AE14-1" target="_blank" rel="noopener">📍 地圖 →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note">
+      <span class="ni">🚗</span>
+      <span>各住宿之泊車安排請於出發前向住宿方確認，市區酒店未必設有免費停車位。</span>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section id="fk-tips">
+    <div class="sec-head"><span class="ico">📌</span><h2>貼士</h2></div>
+    <div class="tips">
+      <div class="tip">
+        <p class="th">🚗 自駕</p>
+        <ul>
+          <li>日本靠左行駛，請小心慢駛</li>
+          <li>須備國際／日本認可駕駛執照；香港駕駛執照須辦理日文譯本</li>
+          <li>高速公路可考慮使用 ETC，過路較為方便</li>
+          <li>山路（別府—由布院—九重）彎多，請預留充裕車程時間</li>
+        </ul>
+      </div>
+      <div class="tip">
+        <p class="th">♨️ 溫泉</p>
+        <ul>
+          <li>由布院為一泊二食旅館，請留意晚餐與早餐時間</li>
+          <li>泡湯前先沖身；長者及有心血管疾病者請注意浸浴時間</li>
+        </ul>
+      </div>
+      <div class="tip">
+        <p class="th">🔥 別府地獄</p>
+        <ul>
+          <li>地獄分佈於兩區，建議精選數個遊覽，不必全部走完</li>
+        </ul>
+      </div>
+      <div class="tip">
+        <p class="th">🌦️ 天氣</p>
+        <ul>
+          <li>八月天氣炎熱潮濕，請注意防曬及補充水分</li>
+          <li>八月亦屬颱風季，出發前請留意天氣預報與航班公告</li>
+        </ul>
+      </div>
+      <div class="tip">
+        <p class="th">🅿️ 人流與泊車</p>
+        <ul>
+          <li>太宰府、糸島於週末人流較多，建議早出發</li>
+          <li>上述地點泊車位有限，請預留尋找車位的時間</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+</div>
+<!-- ===================== 沖繩釣魚團 2026 ===================== -->
+<div class="trip-panel" id="panel-ok">
 
 <header class="hero">
   <div class="hero-inner">
@@ -821,6 +1205,9 @@
   </section>
 
 </main>
+
+</div>
+</div><!-- /.triptabs -->
 
 <footer>
   <span class="sun">🌺</span>
