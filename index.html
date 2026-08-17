@@ -268,6 +268,15 @@
   }
   .steps .d { flex: 1; color: var(--ink); }
   .steps .d b { color: var(--ink); font-weight: 800; }
+  .day .links { display: flex; flex-wrap: wrap; gap: 12px; padding: 0 20px 20px; }
+  .day .link {
+    display: inline-flex; align-items: center; min-height: 48px;
+    text-decoration: none; font-weight: 800; font-size: 1.05rem;
+    color: #fff; background: var(--teal);
+    padding: 10px 22px; border-radius: 12px; border: 2px solid var(--teal);
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .day .link:hover, .day .link:focus-visible { background: var(--teal-strong); border-color: var(--teal-strong); }
 
   /* ---------- Cards ---------- */
   .cards { display: grid; gap: 18px; grid-template-columns: 1fr; }
@@ -1323,7 +1332,7 @@
     <span class="eyebrow">Guangzhou · 清遠</span>
     <h1>🚗 廣州・清遠 2026</h1>
     <p class="meta">
-      <span>2026年8月20–22日</span><span class="dot">·</span><span>3日2夜</span><span class="dot">·</span><span>2個家庭・2架車自駕</span>
+      <span>2026年8月20日起</span><span class="dot">·</span><span>返程日期待定</span><span class="dot">·</span><span>2個家庭・2架車自駕</span>
     </p>
     <p class="summary">2個家庭、2架車自駕，經港珠澳大橋直達順德歡樂海岸，暢玩廣東科學中心，再入住清遠鄉村別墅渡過悠閒周末 🚗🌉</p>
   </div>
@@ -1347,7 +1356,7 @@
   <section id="gz-info">
     <div class="sec-head"><span class="ico">📋</span><h2>快速資訊</h2></div>
     <div class="facts">
-      <div class="fact"><span class="k">日期</span><span class="v">2026/8/20–8/22<small>3日2夜（四至六）</small></span></div>
+      <div class="fact"><span class="k">日期</span><span class="v">2026/8/20 起<small>8/22（六）晚宿清遠別墅，返程日期待定</small></span></div>
       <div class="fact"><span class="k">交通</span><span class="v">自駕（2架車）<small>經港珠澳大橋</small></span></div>
       <div class="fact"><span class="k">人數</span><span class="v">2個家庭<small>親子團</small></span></div>
       <div class="fact"><span class="k">路線</span><span class="v">順德 → 廣州／番禺 → 清遠</span></div>
@@ -1404,15 +1413,19 @@
           <div class="day-num">3</div>
           <div>
             <div class="dh-t">8/22（六）· 清遠</div>
-            <div class="dh-s">清新區早午餐 → 補給採購 → 中午前入住別墅</div>
+            <div class="dh-s">南岸碼頭集合 → 北江遊船 ＋ 飛霞山 → 入住別墅 → 別墅燒烤</div>
           </div>
         </div>
         <ul class="steps">
-          <li><span class="t">09:30</span><span class="d">於 <b>清新區美林廣場</b> 享用早午餐，商場內設超市、戲院及親子設施</span></li>
-          <li><span class="t">補給</span><span class="d">超市補給：飲品、燒烤食材、小食及早餐用品</span></li>
-          <li><span class="t">11:30</span><span class="d">出發前往別墅</span></li>
-          <li><span class="t">12:00 前</span><span class="d">辦理 <b>入住</b>，抵達清遠別墅 🏡</span></li>
+          <li><span class="t">10:30</span><span class="d">於 <b>南岸碼頭</b> 集合<br>集合地址：廣東省清遠市清城區北江一路 40 號南岸碼頭<br>導航地址：清遠市南岸碼頭</span></li>
+          <li><span class="t">上午</span><span class="d"><b>清遠北江遊船 ＋ 飛霞山遊玩</b>，全程約 <b>4 小時</b> ⛴️</span></li>
+          <li><span class="t">午餐</span><span class="d">船上 <b>河鮮宴</b> 🐟</span></li>
+          <li><span class="t">行程後</span><span class="d">駕車前往別墅辦理 <b>入住</b> 🏡</span></li>
+          <li><span class="t">晚上</span><span class="d">於別墅 <b>燒烤（BBQ）</b> 🔥</span></li>
         </ul>
+        <div class="links">
+          <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%BB%A3%E6%9D%B1%E7%9C%81%E6%B8%85%E9%81%A0%E5%B8%82%E6%B8%85%E5%9F%8E%E5%8D%80%E5%8C%97%E6%B1%9F%E4%B8%80%E8%B7%AF40%E8%99%9F%E5%8D%97%E5%B2%B8%E7%A2%BC%E9%A0%AD" target="_blank" rel="noopener">📍 集合碼頭地圖 →</a>
+        </div>
       </article>
 
     </div>
@@ -1421,7 +1434,7 @@
   <!-- Stay -->
   <section id="gz-stay">
     <div class="sec-head"><span class="ico">🏠</span><h2>住宿</h2></div>
-    <p class="lead">全程共 <b>2 處住宿</b>：順德酒店 1 晚（名稱／地址未定）、清遠別墅（8/22 中午前入住）。8/21 晚上視乎行程安排，或留宿番禺／萬博一帶，或直接駕車前往清遠。</p>
+    <p class="lead">全程共 <b>2 處住宿</b>：順德酒店 1 晚（名稱／地址未定）、清遠別墅（8/22 遊船行程後入住，當晚於別墅燒烤）。8/21 晚上視乎行程安排，或留宿番禺／萬博一帶，或直接駕車前往清遠。</p>
 
     <div class="cards">
 
@@ -1434,11 +1447,12 @@
 
       <div class="card wide feat">
         <div class="tags"><span class="tag coral">🏡 別墅</span><span class="tag">清遠</span><span class="tag">Day 3 入住</span></div>
-        <div class="ct">清遠別墅（恒大金碧天下）</div>
-        <div class="cs">廣東省清遠市清新區 · 8/22（六）中午前入住</div>
-        <p class="addr"><b>地址：</b>廣東省清遠市清新區恒大金碧天下桃園北二街 452-102</p>
+        <div class="ct">清遠別墅 · 桃源閒庭休閒別墅（恒大金碧天下）</div>
+        <div class="cs">廣東省清遠市清新區 · 2026年8月22日（六）遊船行程後入住</div>
+        <p class="addr"><b>地址：</b>廣東省清遠市清新區恒大金碧天下桃園北二街 452-102 桃源閒庭休閒別墅</p>
+        <p><b>設施備註：</b>別墅可燒烤，當晚安排 BBQ 晚餐 🔥</p>
         <div class="links">
-          <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%BB%A3%E6%9D%B1%E7%9C%81%E6%B8%85%E9%81%A0%E5%B8%82%E6%B8%85%E6%96%B0%E5%8D%80%E6%81%92%E5%A4%A7%E9%87%91%E7%A2%A7%E5%A4%A9%E4%B8%8B%E6%A1%83%E5%9C%92%E5%8C%97%E4%BA%8C%E8%A1%97452-102" target="_blank" rel="noopener">📍 地圖 →</a>
+          <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%BB%A3%E6%9D%B1%E7%9C%81%E6%B8%85%E9%81%A0%E5%B8%82%E6%B8%85%E6%96%B0%E5%8D%80%E6%81%92%E5%A4%A7%E9%87%91%E7%A2%A7%E5%A4%A9%E4%B8%8B%E6%A1%83%E5%9C%92%E5%8C%97%E4%BA%8C%E8%A1%97452-102%E6%A1%83%E6%BA%90%E9%96%92%E5%BA%AD%E4%BC%91%E9%96%92%E5%88%A5%E5%A2%85" target="_blank" rel="noopener">📍 地圖 →</a>
         </div>
       </div>
 
@@ -1473,7 +1487,7 @@
         <p class="th">🚗 兩車同行</p>
         <ul>
           <li>建議約定集合點及保持聯絡（例如出發前互換行車路線、領隊安排）</li>
-          <li>清遠別墅入住為中午前，建議 Day 2 晚上盡量提早出發，預留車程彈性</li>
+          <li>8/22 需於 <b>10:30</b> 在南岸碼頭集合，建議 Day 2 晚上直接前往清遠留宿，預留車程彈性</li>
         </ul>
       </div>
     </div>
