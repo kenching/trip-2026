@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<title>沖繩釣魚團 2026 · 福岡・九州 2026</title>
-<meta name="description" content="兩個行程共一頁：沖繩釣魚團 2026（7月28–31日，泊港出海釣魚、Novotel Okinawa Naha）與福岡・九州 2026（8月9–15日，自駕別府地獄、由布院溫泉旅館、糸島、太宰府）。">
+<title>沖繩釣魚團 2026 · 福岡・九州 2026 · 廣州・清遠 2026</title>
+<meta name="description" content="三個行程共一頁：沖繩釣魚團 2026（7月28–31日，泊港出海釣魚、Novotel Okinawa Naha）、福岡・九州 2026（8月9–15日，自駕別府地獄、由布院溫泉旅館、糸島、太宰府）與廣州・清遠 2026（8月20–22日，2個家庭2架車自駕，經港珠澳大橋，順德歡樂海岸、廣東科學中心、清遠鄉村別墅）。">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="沖繩釣魚團 2026 · 福岡・九州 2026">
-<meta property="og:title" content="沖繩釣魚團 2026 · 福岡・九州 2026">
-<meta property="og:description" content="兩個行程：7月28–31日 沖繩釣魚團（自駕．泊港出海釣魚．Novotel Okinawa Naha），8月9–15日 福岡・九州（自駕．別府地獄．由布院溫泉旅館．糸島．太宰府）。">
+<meta property="og:site_name" content="沖繩釣魚團 2026 · 福岡・九州 2026 · 廣州・清遠 2026">
+<meta property="og:title" content="沖繩釣魚團 2026 · 福岡・九州 2026 · 廣州・清遠 2026">
+<meta property="og:description" content="三個行程：7月28–31日 沖繩釣魚團（自駕．泊港出海釣魚．Novotel Okinawa Naha），8月9–15日 福岡・九州（自駕．別府地獄．由布院溫泉旅館．糸島．太宰府），8月20–22日 廣州・清遠（2個家庭自駕經港珠澳大橋．順德歡樂海岸．廣東科學中心．清遠別墅）。">
 <meta property="og:url" content="https://kenching.github.io/okinawa-fishing-2026/">
 <meta property="og:image" content="https://kenching.github.io/okinawa-fishing-2026/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="zh_HK">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="沖繩釣魚團 2026 · 福岡・九州 2026">
-<meta name="twitter:description" content="7月28–31日 沖繩釣魚團（自駕．出海釣魚）與 8月9–15日 福岡・九州（別府地獄．由布院溫泉．糸島．太宰府）。">
+<meta name="twitter:title" content="沖繩釣魚團 2026 · 福岡・九州 2026 · 廣州・清遠 2026">
+<meta name="twitter:description" content="7月28–31日 沖繩釣魚團、8月9–15日 福岡・九州、8月20–22日 廣州・清遠（2個家庭自駕經港珠澳大橋），三個行程盡在此頁。">
 <meta name="twitter:image" content="https://kenching.github.io/okinawa-fishing-2026/og-image.png">
 <style>
   :root {
@@ -48,6 +48,10 @@
     --fk-2: #6a3467;
     --fk-3: #a8474a;
     --fk-sun: rgba(255, 186, 120, 0.45);
+    --gz-1: #1c3d2b;
+    --gz-2: #2f6b46;
+    --gz-3: #5a8f3f;
+    --gz-sun: rgba(255, 209, 102, 0.45);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -459,6 +463,7 @@
     display: grid; grid-template-columns: 1fr; gap: 10px;
   }
   @media (min-width: 560px) { .tripbar .row { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 760px) { .tripbar .row { grid-template-columns: 1fr 1fr 1fr; } }
   .tripbtn {
     display: flex; flex-direction: column; justify-content: center; gap: 2px;
     min-height: 64px;
@@ -479,24 +484,35 @@
   }
   .tripbtn:hover { border-color: var(--teal); background: var(--chip-bg); }
   #trip-fk:checked ~ .tripbar label[for="trip-fk"],
-  #trip-ok:checked ~ .tripbar label[for="trip-ok"] {
+  #trip-ok:checked ~ .tripbar label[for="trip-ok"],
+  #trip-gz:checked ~ .tripbar label[for="trip-gz"] {
     background: var(--teal); border-color: var(--teal-strong); color: #fff;
   }
   #trip-fk:checked ~ .tripbar label[for="trip-fk"] small,
-  #trip-ok:checked ~ .tripbar label[for="trip-ok"] small { color: #fff; }
+  #trip-ok:checked ~ .tripbar label[for="trip-ok"] small,
+  #trip-gz:checked ~ .tripbar label[for="trip-gz"] small { color: #fff; }
   #trip-fk:focus-visible ~ .tripbar label[for="trip-fk"],
-  #trip-ok:focus-visible ~ .tripbar label[for="trip-ok"] {
+  #trip-ok:focus-visible ~ .tripbar label[for="trip-ok"],
+  #trip-gz:focus-visible ~ .tripbar label[for="trip-gz"] {
     outline: 4px solid var(--lagoon); outline-offset: 3px;
   }
   .trip-panel { display: none; }
   #trip-fk:checked ~ #panel-fk,
-  #trip-ok:checked ~ #panel-ok { display: block; }
+  #trip-ok:checked ~ #panel-ok,
+  #trip-gz:checked ~ #panel-gz { display: block; }
 
   /* Fukuoka hero palette */
   .hero.fk {
     background:
       radial-gradient(120% 90% at 82% -10%, var(--fk-sun) 0%, rgba(255,186,120,0) 42%),
       linear-gradient(165deg, var(--fk-1) 0%, var(--fk-2) 52%, var(--fk-3) 100%);
+  }
+
+  /* Guangzhou/Qingyuan hero palette */
+  .hero.gz {
+    background:
+      radial-gradient(120% 90% at 82% -10%, var(--gz-sun) 0%, rgba(255,209,102,0) 42%),
+      linear-gradient(165deg, var(--gz-1) 0%, var(--gz-2) 52%, var(--gz-3) 100%);
   }
 
   /* Address / map card helpers (reuse card system) */
@@ -525,11 +541,13 @@
 
 <div class="triptabs">
 
-<input class="trip-radio" type="radio" name="trip" id="trip-fk" checked>
+<input class="trip-radio" type="radio" name="trip" id="trip-gz" checked>
+<input class="trip-radio" type="radio" name="trip" id="trip-fk">
 <input class="trip-radio" type="radio" name="trip" id="trip-ok">
 
 <div class="tripbar">
   <div class="row">
+    <label class="tripbtn" for="trip-gz">🚗 廣州・清遠 2026<small>8月20–22日 · 3日2夜</small></label>
     <label class="tripbtn" for="trip-fk">♨️ 福岡・九州 2026<small>8月9–15日 · 7日6夜</small></label>
     <label class="tripbtn" for="trip-ok">🎣 沖繩釣魚團 2026<small>7月28–31日 · 4日3夜</small></label>
   </div>
@@ -1289,6 +1307,173 @@
         <ul>
           <li>7 月底處於颱風季邊緣，出海前請留意天氣預報</li>
           <li>船家可能因天氣調整班次，保持彈性</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+</div>
+<!-- ===================== 廣州・清遠 2026 ===================== -->
+<div class="trip-panel" id="panel-gz">
+
+<header class="hero gz">
+  <div class="hero-inner">
+    <span class="eyebrow">Guangzhou · 清遠</span>
+    <h1>🚗 廣州・清遠 2026</h1>
+    <p class="meta">
+      <span>2026年8月20–22日</span><span class="dot">·</span><span>3日2夜</span><span class="dot">·</span><span>2個家庭・2架車自駕</span>
+    </p>
+    <p class="summary">2個家庭、2架車自駕，經港珠澳大橋直達順德歡樂海岸，暢玩廣東科學中心，再入住清遠鄉村別墅渡過悠閒周末 🚗🌉</p>
+  </div>
+  <svg class="waves" viewBox="0 0 1440 46" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 24 C 180 4, 300 44, 480 30 C 660 16, 780 46, 960 32 C 1140 18, 1260 44, 1440 26 L1440 46 L0 46 Z" fill="var(--ground)"/>
+  </svg>
+</header>
+
+<nav class="tabs" aria-label="廣州・清遠行程章節導覽">
+  <div class="row">
+    <a href="#gz-info">快速資訊</a>
+    <a href="#gz-days">逐日行程</a>
+    <a href="#gz-stay">住宿</a>
+    <a href="#gz-tips">貼士</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- Quick facts -->
+  <section id="gz-info">
+    <div class="sec-head"><span class="ico">📋</span><h2>快速資訊</h2></div>
+    <div class="facts">
+      <div class="fact"><span class="k">日期</span><span class="v">2026/8/20–8/22<small>3日2夜（四至六）</small></span></div>
+      <div class="fact"><span class="k">交通</span><span class="v">自駕（2架車）<small>經港珠澳大橋</small></span></div>
+      <div class="fact"><span class="k">人數</span><span class="v">2個家庭<small>親子團</small></span></div>
+      <div class="fact"><span class="k">路線</span><span class="v">順德 → 廣州／番禺 → 清遠</span></div>
+    </div>
+  </section>
+
+  <!-- Day by day -->
+  <section id="gz-days">
+    <div class="sec-head"><span class="ico">🗓️</span><h2>逐日行程</h2></div>
+    <div class="timeline">
+
+      <article class="day">
+        <div class="day-head">
+          <div class="day-num">1</div>
+          <div>
+            <div class="dh-t">8/20（四）· 順德</div>
+            <div class="dh-s">香港出發 → 經港珠澳大橋 → 順德歡樂海岸 → 入住酒店</div>
+          </div>
+        </div>
+        <ul class="steps">
+          <li><span class="t">出發</span><span class="d">香港出發，經 <b>港珠澳大橋</b> 前往順德 🌉</span></li>
+          <li><span class="t">下午</span><span class="d">兩架車家庭同行，抵達 <b>順德歡樂海岸</b></span></li>
+          <li><span class="t">約20:00–21:00</span><span class="d">入住酒店（近順德歡樂海岸）</span></li>
+          <li><span class="t">晚餐</span><span class="d">歡樂海岸一帶用餐（如猪肉婆私房菜、順峰山莊分店，或曲水灣風情街沿線輕食）</span></li>
+          <li><span class="t">夜間</span><span class="d">夜間活動：<b>順德眼摩天輪</b>、海濱漫步、甜品雪糕、廣場任小朋友放電 🎡</span></li>
+        </ul>
+      </article>
+
+      <article class="day">
+        <div class="day-head">
+          <div class="day-num">2</div>
+          <div>
+            <div class="dh-t">8/21（五）· 廣州／番禺</div>
+            <div class="dh-s">廣東科學中心 → 番禺／萬博商圈 → 續往清遠或留宿番禺</div>
+          </div>
+        </div>
+        <ul class="steps">
+          <li><span class="t">08:45</span><span class="d">順德出發</span></li>
+          <li><span class="t">09:45–15:00</span><span class="d"><b>廣東科學中心</b>：13個常設展館、逾700件互動展品，親子必玩 🔬</span></li>
+          <li><span class="t">午餐</span><span class="d">於科學中心內或附近大學城用餐</span></li>
+          <li><span class="t">下午</span><span class="d">前往 <b>番禺／萬博商圈</b> 購物（萬達廣場番禺店／K11 Select 萬博／天河城番禺店）🛍️</span></li>
+          <li><span class="t">晚餐</span><span class="d">於萬博商圈一帶用餐</span></li>
+          <li><span class="t">夜宿選擇</span><span class="d"><b>方案一</b>：留宿番禺／萬博一帶（翌日車程較短）；<b>方案二【建議】</b>：當晚直接駕車前往清遠（車程約1.5–2小時，約晚上9點抵達），讓 8/22 早上更為輕鬆</span></li>
+        </ul>
+      </article>
+
+      <div class="note" style="margin-top:0;">
+        <span class="ni">☔</span>
+        <span><b>雨天備案（適用於 8/21）：</b>如天氣不佳，改為全室內行程 —— 全日於 <b>廣東科學中心</b> 遊覽，下午轉往室內購物點 <b>正佳廣場</b>（設室內水族館及室內雨林）或 <b>K11 Select 萬博</b>，親子設施齊備，全程避雨。</span>
+      </div>
+
+      <article class="day">
+        <div class="day-head">
+          <div class="day-num">3</div>
+          <div>
+            <div class="dh-t">8/22（六）· 清遠</div>
+            <div class="dh-s">清新區早午餐 → 補給採購 → 中午前入住別墅</div>
+          </div>
+        </div>
+        <ul class="steps">
+          <li><span class="t">09:30</span><span class="d">於 <b>清新區美林廣場</b> 享用早午餐，商場內設超市、戲院及親子設施</span></li>
+          <li><span class="t">補給</span><span class="d">超市補給：飲品、燒烤食材、小食及早餐用品</span></li>
+          <li><span class="t">11:30</span><span class="d">出發前往別墅</span></li>
+          <li><span class="t">12:00 前</span><span class="d">辦理 <b>入住</b>，抵達清遠別墅 🏡</span></li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Stay -->
+  <section id="gz-stay">
+    <div class="sec-head"><span class="ico">🏠</span><h2>住宿</h2></div>
+    <p class="lead">全程共 <b>2 處住宿</b>：順德酒店 1 晚（名稱／地址未定）、清遠別墅（8/22 中午前入住）。8/21 晚上視乎行程安排，或留宿番禺／萬博一帶，或直接駕車前往清遠。</p>
+
+    <div class="cards">
+
+      <div class="card wide">
+        <div class="tags"><span class="tag">順德</span><span class="tag">Day 1</span><span class="tag">待定</span></div>
+        <div class="ct">順德酒店（待定）</div>
+        <div class="cs">近順德歡樂海岸 · 8/20（四）晚上約 8–9 點入住</div>
+        <p>酒店名稱／地址未定，屆時以實際預訂為準。</p>
+      </div>
+
+      <div class="card wide feat">
+        <div class="tags"><span class="tag coral">🏡 別墅</span><span class="tag">清遠</span><span class="tag">Day 3 入住</span></div>
+        <div class="ct">清遠別墅（恒大金碧天下）</div>
+        <div class="cs">廣東省清遠市清新區 · 8/22（六）中午前入住</div>
+        <p class="addr"><b>地址：</b>廣東省清遠市清新區恒大金碧天下桃園北二街 452-102</p>
+        <div class="links">
+          <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%BB%A3%E6%9D%B1%E7%9C%81%E6%B8%85%E9%81%A0%E5%B8%82%E6%B8%85%E6%96%B0%E5%8D%80%E6%81%92%E5%A4%A7%E9%87%91%E7%A2%A7%E5%A4%A9%E4%B8%8B%E6%A1%83%E5%9C%92%E5%8C%97%E4%BA%8C%E8%A1%97452-102" target="_blank" rel="noopener">📍 地圖 →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section id="gz-tips">
+    <div class="sec-head"><span class="ico">📌</span><h2>貼士</h2></div>
+    <div class="tips">
+      <div class="tip">
+        <p class="th">🌉 港珠澳大橋自駕</p>
+        <ul>
+          <li>需備兩地牌／過境許可及相關証件，出發前確認車輛及駕駛人資格</li>
+          <li>橋上及口岸繁忙時段建議預留充裕時間過關</li>
+        </ul>
+      </div>
+      <div class="tip">
+        <p class="th">🌦️ 天氣</p>
+        <ul>
+          <li>8月天氣炎熱多雨，正值颱風季，出發前留意天氣預報及大橋／口岸通行公告</li>
+          <li>已備妥雨天備案（見逐日行程 Day 2）</li>
+        </ul>
+      </div>
+      <div class="tip">
+        <p class="th">👨‍👩‍👧 親子行程</p>
+        <ul>
+          <li>廣東科學中心及歡樂海岸適合小朋友，建議帶備防曬、水樽及輕便衣物替換</li>
+        </ul>
+      </div>
+      <div class="tip">
+        <p class="th">🚗 兩車同行</p>
+        <ul>
+          <li>建議約定集合點及保持聯絡（例如出發前互換行車路線、領隊安排）</li>
+          <li>清遠別墅入住為中午前，建議 Day 2 晚上盡量提早出發，預留車程彈性</li>
         </ul>
       </div>
     </div>
